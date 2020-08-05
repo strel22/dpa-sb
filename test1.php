@@ -18,7 +18,7 @@ $pass = "";
 //$db_conn = pg_connect("host=$host port=$port schema=$schema dbname=$database");
 $db_conn = pg_connect(getenv('DATABASE_URL'));
 if (!$db_conn) {
-  echo "Невозможно соединиться с postgres базой $database\n";
+  echo "Can't connect to DB!!! $database\n";
   exit;
 }
 
@@ -29,6 +29,18 @@ $qu = pg_query($db_conn, "SELECT id, sfid, name, phone FROM ".$schema.".account"
 while ($data = pg_fetch_object($qu)) {
   echo $data->id ." | ". $data->sfid ." | ". $data->name ." | ". $data->phone . "<br />";
 }
+
+// update !
+
+$data_for_update = array('phone'=>'31644941122');
+$conditions_for_update = array('sfid'=>'0015E000010U8e2QAC');
+$res = pg_update($db_conn, $schema.".account", $data_for_update, $conditions_for_update);
+  if ($res) {
+      echo "Data is updated: $res\n";
+  } else {
+      echo "User must have sent wrong inputs\n";
+  }
+
 
 pg_free_result($qu);
 pg_close($db_conn);
