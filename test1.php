@@ -1,7 +1,7 @@
 start...2
 <?php 
 
-echo getenv('DATABASE_URL') ;
+//echo getenv('DATABASE_URL') ;
 
 $schema = "dpasf";
 $database = "ddg30magmsqno";
@@ -13,7 +13,8 @@ $pass = "";
 
 //user=lamb password=bar
 //$db_conn = pg_connect("host=$host port=$port dbname=$database user=$user password=$pass");
-$db_conn = pg_connect("host=$host port=$port schema=$schema dbname=$database");
+//$db_conn = pg_connect("host=$host port=$port schema=$schema dbname=$database");
+$db_conn = pg_connect(getenv('DATABASE_URL'));
 if (!$db_conn) {
   echo "Невозможно соединиться с postgres базой $database\n";
   exit;
