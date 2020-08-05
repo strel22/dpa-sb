@@ -26,7 +26,7 @@ $qu = pg_query($db_conn, "SELECT id, sfid, name, phone FROM ".$schema.".account"
 //echo $qu;
 
 while ($data = pg_fetch_object($qu)) {
-  echo $data->id ." | ". $data->sfid ." | ". $data->Name ." | ". $data->phone . "<br />";
+  echo $data->id ." | ". $data->sfid ." | ". $data->name ." | ". $data->phone . "<br />";
 }
 
 pg_free_result($qu);
