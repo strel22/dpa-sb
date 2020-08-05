@@ -1,7 +1,8 @@
 start...
 <?php 
 
-$database = "dpasf.ddg30magmsqno";
+$schema = "dpasf";
+$database = "ddg30magmsqno";
 $host = "ec2-3-248-4-172.eu-west-1.compute.amazonaws.com";
 $port = 5432;
 $user = "";
@@ -9,7 +10,7 @@ $pass = "";
 
 //user=lamb password=bar
 //$db_conn = pg_connect("host=$host port=$port dbname=$database user=$user password=$pass");
-$db_conn = pg_connect("host=$host port=$port dbname=$database");
+$db_conn = pg_connect("host=$host port=$port schema=$schema dbname=$database");
 if (!$db_conn) {
   echo "Невозможно соединиться с postgres базой $database\n";
   exit;
@@ -27,4 +28,4 @@ pg_close($db_conn);
 ?>
 
 <br>
-end...1
+end...2
