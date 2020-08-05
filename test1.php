@@ -1,6 +1,8 @@
 start...1
 <?php 
 
+echo getenv('DATABASE_URL') ;
+
 $schema = "dpasf";
 $database = "ddg30magmsqno";
 //$host = "ec2-3-248-4-172.eu-west-1.compute.amazonaws.com";
