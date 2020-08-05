@@ -1,10 +1,14 @@
 start...
 <?php 
 
-$database = "ddg30magmsqno";
+$database = "dpasf.ddg30magmsqno";
 $host = "ec2-3-248-4-172.eu-west-1.compute.amazonaws.com";
 $port = 5432;
+$user = "";
+$pass = "";
 
+//user=lamb password=bar
+//$db_conn = pg_connect("host=$host port=$port dbname=$database user=$user password=$pass");
 $db_conn = pg_connect("host=$host port=$port dbname=$database");
 if (!$db_conn) {
   echo "Невозможно соединиться с postgres базой $database\n";
