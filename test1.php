@@ -3,7 +3,8 @@ start...1
 
 $schema = "dpasf";
 $database = "ddg30magmsqno";
-$host = "ec2-3-248-4-172.eu-west-1.compute.amazonaws.com";
+//$host = "ec2-3-248-4-172.eu-west-1.compute.amazonaws.com";
+$host = "localhost";
 $port = 5432;
 $user = "";
 $pass = "";
