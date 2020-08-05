@@ -1,4 +1,5 @@
-start...4
+start... version: 4
+
 <?php 
 
 //echo getenv('DATABASE_URL') ;
@@ -21,6 +22,8 @@ if (!$db_conn) {
 }
 
 $qu = pg_query($db_conn, "SELECT Id FROM Account");
+
+echo $qu;
 
 while ($data = pg_fetch_object($qu)) {
   echo $data->Id . "<br />";
