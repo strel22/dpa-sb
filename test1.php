@@ -1,4 +1,4 @@
-start... version: 10
+start... version: 11
 <br>
 
 <?php 
@@ -31,6 +31,8 @@ while ($data = pg_fetch_object($qu)) {
 }
 
 // update !
+
+echo "<hr>updating<hr>";
 
 $data_for_update = array('phone'=>'31644941122');
 $conditions_for_update = array('sfid'=>'0015E000010U8e2QAC');
