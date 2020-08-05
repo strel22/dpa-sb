@@ -1,4 +1,4 @@
-start... version: 5
+start... version: 6
 
 <?php 
 
@@ -21,12 +21,12 @@ if (!$db_conn) {
   exit;
 }
 
-$qu = pg_query($db_conn, "SELECT sfid FROM Account");
+$qu = pg_query($db_conn, "SELECT Name FROM Account");
 
 //echo $qu;
 
 while ($data = pg_fetch_object($qu)) {
-  echo $data->sfid . "<br />";
+  echo $data->Name . "<br />";
 }
 
 pg_free_result($qu);
