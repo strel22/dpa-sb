@@ -1,4 +1,4 @@
-start... version: 6
+start... version: 7
 
 <?php 
 
@@ -21,7 +21,7 @@ if (!$db_conn) {
   exit;
 }
 
-$qu = pg_query($db_conn, "SELECT Name FROM Account");
+$qu = pg_query($db_conn, "SELECT Name FROM ".$schema.".account");
 
 //echo $qu;
 
