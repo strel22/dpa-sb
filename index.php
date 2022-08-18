@@ -1,3 +1,1 @@
-<?
-echo('index test2');
-?>
+<?php header( 'Location: /Dashboard.html'); ?>
