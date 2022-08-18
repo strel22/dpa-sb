@@ -1,3 +1,3 @@
 <?
-echo('index test');
+echo('index test2');
 ?>
