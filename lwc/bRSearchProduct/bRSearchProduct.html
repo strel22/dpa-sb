@@ -1,0 +1,73 @@
+<template>
+    <lightning-card title="Search product by distance" icon-name="custom:custom19">
+        <div class="slds-m-around_medium">
+
+            <div class="slds-p-around_medium lgc-bg">
+                <div class="slds-grid">
+                    <div class="slds-size_1-of-1">
+                        Enter distance: 
+                    </div>
+                </div>
+            
+                <div class="slds-grid">
+                    <div class="slds-size_1-of-1">
+                        <lightning-input 
+                            type="text" 
+                            label="Distance" 
+                            onchange={handleDistanceChange} 
+                            id="distanceInput"></lightning-input>
+                    </div>
+                
+                </div>
+            
+                <div class="slds-size_1-of-1 alignRight" >          
+                    <div>
+                        <lightning-button label="Search" onclick={handleDistanceSearch} ></lightning-button>
+                    </div>
+                </div>    
+            </div>  
+        
+
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                Products found: 
+            </h2>
+            <div style="height: 200px">
+                <lightning-datatable
+                        key-field="id"                                
+                        data={productsData}
+                        columns={productsColumns}                                
+                        onrowselection={handleProductsSelected}>
+                        <!-- max-row-selection="1" -->
+                </lightning-datatable>
+            </div>
+
+            <div class="slds-size_1-of-1 alignRight" >          
+                <div>
+                    <lightning-button label="Add to Basket" onclick={handleAddToBasket} ></lightning-button>
+                </div>
+            </div>    
+
+<hr>
+
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                Order lines created: 
+            </h2>
+            <div style="height: 200px">
+                <lightning-datatable
+                        key-field="id"                                
+                        data={orderLinesData}
+                        columns={orderLinesColumns}                                
+                        onrowselection={handleOrderLinesSelected}
+                        data-id="orderLinesLDB">
+                        <!-- max-row-selection="1" -->
+                </lightning-datatable>
+            </div>
+        
+            <div class="slds-size_1-of-1 alignRight" >          
+                <div>
+                    <lightning-button label="Remove from Basket" onclick={handleRemoveFromBasket} ></lightning-button>
+                </div>
+            </div> 
+        </div>
+    </lightning-card>
+</template>
